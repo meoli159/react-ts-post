@@ -1,12 +1,17 @@
 import { useState } from 'react';
 import style from './NewPost.module.css';
+type PostType = {
+  author: string;
+  body: string;
+};
 type IProps = {
   // onBodyChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   // onUserNameChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onCancel: () => void;
+  onAddPost: (postData: PostType) => void;
 };
 
-function NewPost({ onCancel }: IProps) {
+function NewPost({ onCancel, onAddPost }: IProps) {
   const [inputBody, setInputBody] = useState('');
   const [inputUserName, setInputUserName] = useState('');
   function changeBodyHandler(e: React.ChangeEvent<HTMLTextAreaElement>) {
@@ -23,8 +28,7 @@ function NewPost({ onCancel }: IProps) {
       author: inputUserName,
       body: inputBody,
     };
-    console.log(postData);
-
+    onAddPost(postData);
     onCancel();
   }
   return (

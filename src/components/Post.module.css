@@ -21,6 +21,7 @@
   margin: 0.25rem 0 0 0;
   color: #000000;
   font-style: italic;
+  word-break: break-all;
 }
 
 @keyframes animate-in {
