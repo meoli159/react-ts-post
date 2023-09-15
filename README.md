@@ -2,8 +2,8 @@
 
 # Img
 
-![alt Sample](public/sample1.png?raw=true)
+![alt Sample](img/sample1.png)
 
-![alt Sample](public/sample2.png?raw=true)
+![alt Sample](img/sample2.png)
 
 **Link to test: [Click me](https://nespost.netlify.app/)**
