@@ -20,7 +20,7 @@ function PostsList({ isPosting, onStopPosting }: IProps) {
   useEffect(() => {
     setIsFetching(true);
     async function fetchPosts() {
-      const res = await fetch('/api/posts');
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/posts`);
       const resData = await res.json();
       setPost(resData.data);
       setIsFetching(false);
@@ -29,7 +29,7 @@ function PostsList({ isPosting, onStopPosting }: IProps) {
   }, []);
 
   function addPostHandler(postData: PostType) {
-    fetch('/api/posts', {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/posts`, {
       method: 'POST',
       body: JSON.stringify(postData),
       headers: { 'Content-Type': 'application/json' },
