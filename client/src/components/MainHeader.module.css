@@ -30,3 +30,28 @@
 .button:hover {
   background-color: #8c6cf7;
 }
+
+.alert {
+  padding: 5px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.alert p {
+  animation: slideRightToLeft 25s linear infinite; /* Adjust the duration and timing function as needed */
+  width: max-content;
+}
+
+@keyframes slideRightToLeft {
+  0% {
+    transform: translateX(100%); /* Start from the right side */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left side */
+  }
+}

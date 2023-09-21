@@ -26,7 +26,7 @@ function NewPost({ onCancel, onAddPost }: IProps) {
     e.preventDefault();
     const postData = {
       author: inputUserName,
-      body: inputBody,
+      body: inputBody.trim(),
     };
     onAddPost(postData);
     onCancel();
