@@ -14,7 +14,7 @@
     "start:prod": "NODE_ENV=production && yarn migration:run && ts-node src/index.ts",
     "dev": "NODE_ENV=development && yarn migration:run && nodemon src/index.ts",
     "build": "tsc",
-    "serve": "node dist/index.js",
+    "serve": "NODE_ENV=production && yarn build && yarn migration:run && node dist/index.js",
     "typeorm": "typeorm-ts-node-commonjs -d src/database/data-source.ts",
     "migration:generate": "NODE_ENV=development yarn typeorm migration:generate",
     "migration:run": "yarn typeorm migration:run",
