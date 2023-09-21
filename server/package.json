@@ -1,6 +1,9 @@
 {
   "name": "react-ts-post",
   "packageManager": "yarn@3.6.3",
+  "engines": {
+    "node": ">18.0.0"
+  },
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
@@ -15,10 +18,10 @@
     "dev": "NODE_ENV=development && yarn migration:run && nodemon src/index.ts",
     "build": "tsc",
     "serve": "NODE_ENV=production node dist/index.js",
-    "typeorm": "typeorm-ts-node-commonjs -d src/database/data-source.ts",
-    "migration:generate": "NODE_ENV=development yarn typeorm migration:generate",
+    "typeorm": "NODE_ENV=production typeorm-ts-node-commonjs -d src/database/data-source.ts",
+    "migration:generate": " yarn typeorm migration:generate",
     "migration:run": "yarn typeorm migration:run",
-    "migration:revert": "NODE_ENV=development yarn typeorm migration:revert"
+    "migration:revert": "yarn typeorm migration:revert"
   },
   "include": [
     "src/**/*.ts"
