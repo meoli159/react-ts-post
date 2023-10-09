@@ -1,6 +1,8 @@
+import React from 'react';
 import PostsList from './components/PostsList';
 import MainHeader from './components/MainHeader';
-import { useState } from 'react';
+import { ,useState } from 'react';
+
 function App() {
   const [modalIsVisible, setModalIsVisible] = useState(false);
   function showModalHandler() {
@@ -9,6 +11,11 @@ function App() {
   function hideModalHandler() {
     setModalIsVisible(false);
   }
+  
+  const log = () =>{
+       console.log("hello");
+    }
+
   return (
     <>
       <MainHeader onCreatePost={showModalHandler} />
